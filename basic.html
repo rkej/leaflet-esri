@@ -17,6 +17,7 @@
   <script src="https://unpkg.com/esri-leaflet@2.3.0/dist/esri-leaflet.js"
     integrity="sha512-1tScwpjXwwnm6tTva0l0/ZgM3rYNbdyMj5q6RSQMbNX6EUMhYDE3pMRGZaT41zHEvLoWEK7qFEJmZDOoDMU7/Q=="
     crossorigin=""></script>   
+    
 
   <style>
     html,
@@ -37,7 +38,9 @@
           center: [37.75, -122.23],
           zoom: 10
         });
-        const esriStreets = L.esri.basemapLayer('Streets').addTo(map);
+        const esriTiledMap = L.esri.tiledMapLayer({
+      url: 'https://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer'
+  }).addTo(map);
     </script>
 </body>
 </html>
